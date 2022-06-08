@@ -1,6 +1,8 @@
 # MinistryPlatform Care Schedule to Teams voice app Connector
 Powershell scripts and supporting documentation to automate setting Teams Call Queue and Auto Attendant destinations based on a MinistryPlatform Care Schedule. This is intended to automate a "Pastor on Call" rotation that some churches have.
 
+Refer to [SETUP.md](setup/SETUP.md) for setup and configuration instructions.
+
 ## Narrative Problem Description
 "Contoso Church" is a multi-campus church which receives calls from church attendees and community members seeking help and counseling in crisis situations. During office hours, each campus has a team or campus pastor who answers these calls. Outside of office hours, or if the campus team does not answer, calls are forwarded to a Pastor on Call. The Pastor on Call is a rotation managed by a Care Schedule in [MinistryPlatform](https://www.ministryplatform.com/home). The assigned Pastor on Call receives calls for all campuses. Contoso Church wants to automate changing several elements of the Teams Phone System based on the Care Schedule.
 
