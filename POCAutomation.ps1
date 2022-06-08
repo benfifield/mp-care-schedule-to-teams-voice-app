@@ -9,13 +9,13 @@
 #######################################################################################
 
 # Authentication Variables
-$mpBaseDomain = "my.contoso.church"
 $mpAPIClientID = "clientid"
 $mpAPIClientSecret = "clientsecret"
 $teamsAdminUsername = "teamsadminuser@contoso.church"
 $teamsAdminPassword = ConvertTo-SecureString -String "password" -AsPlainText -Force
 
 # Control Variables
+$mpBaseDomain = "my.contoso.church"
 $mpAPIProcess = "api_CUSTOM_GetPOCContactEmail"
 $expectedStaffUPNSuffix = "contoso.church"
 # Set either of these variables to "" if you want to skip that step
