@@ -6,6 +6,7 @@ Refer to [SETUP.md](setup/SETUP.md) for setup and configuration instructions.
 ## Future Improvements
 - [ ] Alter script to use a separate environment variables file
 - [ ] Alter script to authenticate with an AzureAD application using a certificate or Secure Application Model rather than an administrative user with MFA disabled
+- [ ] Split into separate scripts for Call Queue and Auto Attendant to support more easily automating multiple voice apps
 - [ ] Documentation: replace flowchart graphic with Mermaid diagram
 
 ## Narrative Problem Description
