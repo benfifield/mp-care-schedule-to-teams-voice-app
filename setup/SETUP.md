@@ -2,7 +2,6 @@
 This script requires several elements to be set up and configured.
 
 **Documentation TODO:**
-- [ ] Set up or reconfigure the Teams Phone System, and notate the voice app GUIDs
 - [ ] Configure variables in the script
 - [ ] Prepare the computer or server which will be running the script with Task Scheduler
 - [ ] Deploy the script with Task Scheduler
@@ -89,6 +88,19 @@ Care Schedules[^1] consists of two custom tables, Care_Schedule_Types and Care_S
 * In MinistryPlatform, navigate to System Setup > API Procedures and create a new API Procedure:
   - Procedure Name: `api_CUSTOM_GetPOCContactEmail`
 * Grant access to the new API Procedure to the desired API Client using a Security Role
+
+## Configure Teams Phone System
+The church should configure their Teams Phone System to fit their needs. This script is only designed to:
+- Set the call routing destination for the after hours option of an Auto Attendant to redirect to the assigned Pastor on Call
+- Set the Call overflow and Call timeout redirects to the assigned Pastor on Call
+
+Feel free to use the example on the [README](/README.md) as a framework for designing the Pastor on Call workflow for the church's Teams Phone System. Once the Phone System is configured, please retrieve the Identity GUIDs of the call queue and auto attendant for configuring the script later. There are two ways to retrieve the GUIDs:
+- In the Teams Admin Center:
+  - Navigate to and click on the Call Queue or Auto Attendant
+  - The GUID is displayed at the end of the URL in the address bar
+- Using Teams PowerShell:
+  - Call Queue: run `Get-CSCallQueue -Name "Name of the Call Queue"`
+  - Auto Attendant: run `Get-CSAutoAttendant -Name "Name of the Auto Attendant"`
 
 
 [^1]: Care Schedules is also used by Hospital Calling (not yet published)
