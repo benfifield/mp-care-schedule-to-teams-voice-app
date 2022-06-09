@@ -43,6 +43,19 @@ There are six configured elements of the Teams Phone System involved:
 - Pastor on Call Auto Attendant
   - Set the After Hours target to the assigned Pastor on Call
 
-The assigned Pastor on Call is set using the Care Schedule in MinistryPlatform, with Care Schedule Type "POC."
+Contoso Church also needs a way to create a schedule for the Pastor on Call rotation.
 
 ## Solution
+Microsoft provides a PowerShell module for configuring Teams. This solution uses a PowerShell script which is automatically executed at a regular frequency.
+
+Contoso Church uses MinistryPlatform to track other information like the Pastor on Call rotation, so Contoso Church's system is extended with a "Care Schedule" feature. The assigned Pastor on Call is set using the Care Schedule in MinistryPlatform, with Care Schedule Type "POC."
+
+The script does the following:
+* Authorizes to the MinistryPlatform API
+* Uses the MinistryPlatform API to retrieve the email address of the currently assigned Pastor on Call
+* Authorizes to the Microsoft Teams Powershell module
+* Matches the email address of the Pastor on Call to a Microsoft Teams user
+* Assigns the Microsoft Teams user as the TimeoutActionTarget and OverflowActionTarget for a single call queue
+* Assigns the Microsoft Teams user as the call route destination for after hours
+
+The PowerShell script is executed at a regular frequency using Task Scheduler on a Windows Server computer with the MicrosoftTeams PowerShell module installed.
